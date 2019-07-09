@@ -16,8 +16,12 @@ class TimeViewController: UIViewController {
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var dayLabel: UILabel!
-    @IBOutlet var totalDaysLabel: UILabel!
     @IBOutlet var calculatingLabel: UILabel!
+    
+    @IBOutlet var secondTitle: UILabel!
+    @IBOutlet var secondMonthLabel: UILabel!
+    @IBOutlet var secondDayLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,10 @@ class TimeViewController: UIViewController {
         yearLabel.isHidden = true
         monthLabel.isHidden = true
         dayLabel.isHidden = true
-        totalDaysLabel.isHidden = true
+        
+        secondTitle.isHidden = true
+        secondMonthLabel.isHidden = true
+        secondDayLabel.isHidden = true
         
         loadTime()
         
@@ -73,18 +80,24 @@ class TimeViewController: UIViewController {
         let formatedNextDate = dateFormatter.date(from: nextDate)
         
         let dateUntil = Calendar.current.dateComponents(components, from: currentDate, to: formatedNextDate!)
+        print ("\(dateUntil)")
         
+        secondMonthLabel.text = "\(dateUntil.month!) 个月"
+        secondDayLabel.text = "\(dateUntil.day!) 天"
         
+        secondTitle.isHidden = false
+        secondMonthLabel.isHidden = false
+        secondDayLabel.isHidden = false
 
     }
     
-    func scheduledTimerWithTimeInterval(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateCounting() {
-        
-    }
+//    func scheduledTimerWithTimeInterval(){
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func updateCounting() {
+//
+//    }
     
 
 

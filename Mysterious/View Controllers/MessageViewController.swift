@@ -17,9 +17,18 @@ class MessageViewController: UIViewController {
     var index = 0
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var loadingView: UIView!
+    
+    @IBOutlet var loadingLabel: UILabel!
+    @IBOutlet var VPNLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //register custom cell nib
+        let cellNib = UINib(nibName: "MessageTableViewCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "myCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,6 +36,7 @@ class MessageViewController: UIViewController {
     }
     
     func FirebaseCall() {
+
         msgTable.removeAll()
         let rootRef = Database.database().reference().child("Messages")
         rootRef.observe(.value) { (snapshot) in
@@ -45,7 +55,10 @@ class MessageViewController: UIViewController {
                 }
                 self.loaded = true
                 self.tableView.isHidden = false
+                self.loadingView.isHidden = true
                 self.tableView.reloadData()
+            } else {
+                self.loadingLabel.text = "这里空空如也 :("
             }
             
         }
@@ -59,9 +72,17 @@ extension MessageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = msgTable[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MessageTableViewCell
+        
+        cell.titleLabel.text = msgTable[indexPath.row].title
+        cell.dateLabel.text = msgTable[indexPath.row].timeStamp
+        cell.nameLabel.isHidden = true
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

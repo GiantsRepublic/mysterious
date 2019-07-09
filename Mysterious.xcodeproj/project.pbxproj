@@ -10,6 +10,11 @@
 		18E89FB71CC8CB5B65E1B780 /* Pods_Mysterious.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26B45CC527B4AD848B16C0C /* Pods_Mysterious.framework */; };
 		96D676AD22CF7D990036CD85 /* DetailMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676AC22CF7D990036CD85 /* DetailMessageViewController.swift */; };
 		96D676B122D336550036CD85 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676B022D336550036CD85 /* TimeViewController.swift */; };
+		96D676B422D43D720036CD85 /* UtilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676B222D43D720036CD85 /* UtilityTableViewCell.swift */; };
+		96D676B522D43D720036CD85 /* UtilityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D676B322D43D720036CD85 /* UtilityTableViewCell.xib */; };
+		96D676B822D440700036CD85 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676B622D440700036CD85 /* MessageTableViewCell.swift */; };
+		96D676B922D440700036CD85 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D676B722D440700036CD85 /* MessageTableViewCell.xib */; };
+		96D676BB22D451870036CD85 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676BA22D451870036CD85 /* Tickets.swift */; };
 		96D79574229FC97300F4FF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D79573229FC97300F4FF52 /* GoogleService-Info.plist */; };
 		96E1BED5229FCC4000EF975E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED4229FCC4000EF975E /* LoginViewController.swift */; };
 		96E1BED7229FEF6E00EF975E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED6229FEF6E00EF975E /* Message.swift */; };
@@ -27,6 +32,11 @@
 		96D676AC22CF7D990036CD85 /* DetailMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMessageViewController.swift; sourceTree = "<group>"; };
 		96D676AF22D32A710036CD85 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		96D676B022D336550036CD85 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		96D676B222D43D720036CD85 /* UtilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityTableViewCell.swift; sourceTree = "<group>"; };
+		96D676B322D43D720036CD85 /* UtilityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtilityTableViewCell.xib; sourceTree = "<group>"; };
+		96D676B622D440700036CD85 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		96D676B722D440700036CD85 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		96D676BA22D451870036CD85 /* Tickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
 		96D79573229FC97300F4FF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96E1BED4229FCC4000EF975E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		96E1BED6229FEF6E00EF975E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -63,6 +73,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		96D676BC22D452080036CD85 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				96E1BED6229FEF6E00EF975E /* Message.swift */,
+				96D676BA22D451870036CD85 /* Tickets.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		96D676BD22D4521F0036CD85 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96D676B222D43D720036CD85 /* UtilityTableViewCell.swift */,
+				96D676B322D43D720036CD85 /* UtilityTableViewCell.xib */,
+				96D676B622D440700036CD85 /* MessageTableViewCell.swift */,
+				96D676B722D440700036CD85 /* MessageTableViewCell.xib */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		96F3DB22229F9143005E8A19 = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +114,11 @@
 		96F3DB2D229F9143005E8A19 /* Mysterious */ = {
 			isa = PBXGroup;
 			children = (
+				96F3DB32229F9143005E8A19 /* Main.storyboard */,
+				96D676BD22D4521F0036CD85 /* Custom Cells */,
+				96D676BC22D452080036CD85 /* Classes */,
 				96F3DB40229FC4D2005E8A19 /* View Controllers */,
 				96F3DB2E229F9143005E8A19 /* AppDelegate.swift */,
-				96F3DB32229F9143005E8A19 /* Main.storyboard */,
-				96E1BED6229FEF6E00EF975E /* Message.swift */,
 				96F3DB35229F9144005E8A19 /* Assets.xcassets */,
 				96F3DB37229F9144005E8A19 /* LaunchScreen.storyboard */,
 				96F3DB3A229F9144005E8A19 /* Info.plist */,
@@ -180,7 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F3DB39229F9144005E8A19 /* LaunchScreen.storyboard in Resources */,
+				96D676B922D440700036CD85 /* MessageTableViewCell.xib in Resources */,
 				96D79574229FC97300F4FF52 /* GoogleService-Info.plist in Resources */,
+				96D676B522D43D720036CD85 /* UtilityTableViewCell.xib in Resources */,
 				96F3DB36229F9144005E8A19 /* Assets.xcassets in Resources */,
 				96F3DB34229F9143005E8A19 /* Main.storyboard in Resources */,
 			);
@@ -249,10 +282,13 @@
 				96E1BED922A006B000EF975E /* AddMessageViewController.swift in Sources */,
 				96D676B122D336550036CD85 /* TimeViewController.swift in Sources */,
 				96E1BED5229FCC4000EF975E /* LoginViewController.swift in Sources */,
+				96D676B822D440700036CD85 /* MessageTableViewCell.swift in Sources */,
 				96F3DB31229F9143005E8A19 /* ViewController.swift in Sources */,
 				96E1BED7229FEF6E00EF975E /* Message.swift in Sources */,
 				96D676AD22CF7D990036CD85 /* DetailMessageViewController.swift in Sources */,
 				96F3DB42229FC4FA005E8A19 /* MessageViewController.swift in Sources */,
+				96D676BB22D451870036CD85 /* Tickets.swift in Sources */,
+				96D676B422D43D720036CD85 /* UtilityTableViewCell.swift in Sources */,
 				96F3DB2F229F9143005E8A19 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
