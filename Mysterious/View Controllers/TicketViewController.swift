@@ -12,6 +12,8 @@ import Firebase
 class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var loadingView: UIView!
+    @IBOutlet var loadingLabel: UILabel!
     
     var ticketTable = [Ticket]()
 
@@ -32,9 +34,10 @@ class ViewController: UIViewController {
     
     func FirebaseCall() {
         
-        ticketTable.removeAll()
         let rootRef = Database.database().reference().child("Tickets")
         rootRef.observe(.value) { (snapshot) in
+            self.ticketTable.removeAll()
+
             //print(snapshot.value!)
             if snapshot.hasChildren() {
                 let value = snapshot.value! as! [String: Any]
@@ -50,10 +53,10 @@ class ViewController: UIViewController {
                 }
                 //self.loaded = true
                 self.tableView.isHidden = false
-                //self.loadingView.isHidden = true
+                self.loadingView.isHidden = true
                 self.tableView.reloadData()
             } else {
-                //self.loadingLabel.text = "这里空空如也 :("
+                self.loadingLabel.text = "暂时没有可用的券哦"
             }
             
         }
@@ -69,7 +72,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! UtilityTableViewCell
         cell.ticketNameLabel.text = self.ticketTable[indexPath.row].title
-        cell.ticketLeftLabel.text = "\(self.ticketTable[indexPath.row].count)"
+        cell.ticketLeftLabel.text = "剩余 \(self.ticketTable[indexPath.row].count) 张"
         return cell
     }
     
@@ -77,6 +80,39 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 75
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //validate ticket count
+        let selectedTicket = self.ticketTable[indexPath.row]
+        if selectedTicket.count > 0 {
+            //alert actions
+            let confirmAlert = UIAlertController(title: "你确定吗!", message: "你确定要使用\(self.ticketTable[indexPath.row].title)吗", preferredStyle: .alert)
+            confirmAlert.addAction(UIAlertAction(title: "确定！", style: .default, handler: {action in self.confirmHandler(ticket: self.ticketTable[indexPath.row])}))
+            confirmAlert.addAction(UIAlertAction(title: "我再想想", style: .cancel, handler: nil))
+            self.present(confirmAlert, animated: true)
+        }
+        
+        
+    }
+    
+    func confirmHandler (ticket: Ticket) {
+        //print("confirm pressed")
+        
+        
+        var count = ticket.count
+        if count > 1 {
+            count = count - 1
+            let rootRef = Database.database().reference().child("Tickets").child(ticket.title)
+            rootRef.updateChildValues(["count": count, "issuer": ticket.issuer])
+        } else if count == 1 {
+            let rootRef = Database.database().reference().child("Tickets").child(ticket.title)
+            rootRef.removeValue()
+            
+            self.tableView.isHidden = true
+            self.loadingView.isHidden = false
+            self.loadingLabel.text = "暂时没有可用的券哦"
+        }
+        
+    }
 
 }
 

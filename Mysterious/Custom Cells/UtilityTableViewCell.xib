@@ -18,24 +18,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu1-Jm-FRe">
-                        <rect key="frame" x="16" y="58" width="72" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-sD-xNi">
                         <rect key="frame" x="16" y="11" width="109" height="26.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu1-Jm-FRe">
+                        <rect key="frame" x="263" y="58" width="72" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="fu1-Jm-FRe" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4sK-8y-Bsh"/>
                     <constraint firstItem="Pb0-sD-xNi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="IYr-ci-b8m"/>
+                    <constraint firstItem="fu1-Jm-FRe" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="KdT-1I-MuJ"/>
                     <constraint firstItem="fu1-Jm-FRe" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="guL-eN-oQd"/>
                     <constraint firstItem="Pb0-sD-xNi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="uxN-BQ-jmF"/>
-                    <constraint firstItem="fu1-Jm-FRe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yJw-mS-du9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

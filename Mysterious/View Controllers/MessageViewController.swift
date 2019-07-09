@@ -29,6 +29,8 @@ class MessageViewController: UIViewController {
         //register custom cell nib
         let cellNib = UINib(nibName: "MessageTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "myCell")
+        
+        tabBarItem.image = tabBarItem.image?.withRenderingMode(.alwaysTemplate)
     }
     
     override func viewDidAppear(_ animated: Bool) {

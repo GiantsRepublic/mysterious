@@ -25,6 +25,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4So-Bh-udK"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-xj-aDz">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="注：本产品需要打开VPN才能使用哦！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrj-xb-EQq">
+                                        <rect key="frame" x="74" y="340" width="226" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="疯狂读取中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of8-75-Zuz">
+                                        <rect key="frame" x="8" y="309" width="359" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -35,14 +56,86 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GyW-76-D8g"/>
+                    <navigationItem key="navigationItem" id="GyW-76-D8g">
+                        <barButtonItem key="rightBarButtonItem" image="new_voucher-Small" id="sNd-qO-kRg">
+                            <connections>
+                                <segue destination="xI2-NS-5dr" kind="show" id="wiL-VN-ecV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="loadingLabel" destination="of8-75-Zuz" id="lfW-p0-TtV"/>
+                        <outlet property="loadingView" destination="u7l-xj-aDz" id="Fdl-cw-0D4"/>
                         <outlet property="tableView" destination="3q4-ts-MMz" id="Rht-a2-YJr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759.2" y="1181.5270935960591"/>
+            <point key="canvasLocation" x="1758" y="1680"/>
+        </scene>
+        <!--添加票券-->
+        <scene sceneID="42w-Et-fLP">
+            <objects>
+                <viewController title="添加票券" id="xI2-NS-5dr" customClass="AddTicketViewController" customModule="Mysterious" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BCX-hY-ZHY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="票券名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S8g-es-fTo">
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tfq-RT-gxW">
+                                <rect key="frame" x="34" y="186" width="276" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="xI2-NS-5dr" eventType="valueChanged" id="WgL-Kf-zWV"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="颁发数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjQ-Lm-iTa">
+                                <rect key="frame" x="16" y="150" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请注意！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynR-Bd-T5t">
+                                <rect key="frame" x="156" y="632" width="62" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您颁发的票券只能给对方使用哦！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnT-wQ-EXZ">
+                                <rect key="frame" x="72" y="658" width="230" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTN-QX-heY">
+                                <rect key="frame" x="334" y="187" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lpt-C7-uL5"/>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="TTN-QX-heY" id="2Yc-Ic-VOV"/>
+                        <outlet property="countSlider" destination="Tfq-RT-gxW" id="MGi-3s-gbM"/>
+                        <outlet property="titleField" destination="S8g-es-fTo" id="SW2-he-tlR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Do5-TE-O6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2664.8000000000002" y="2224.8768472906404"/>
         </scene>
         <!--时-->
         <scene sceneID="qPe-mG-ak0">
@@ -112,7 +205,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bZj-gi-nqn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="时" id="V9S-Gn-dwr"/>
+                    <tabBarItem key="tabBarItem" title="时" image="Icon-Small" id="V9S-Gn-dwr"/>
                     <connections>
                         <outlet property="calculatingLabel" destination="V8V-ct-aw4" id="9Cp-CL-9XI"/>
                         <outlet property="dayLabel" destination="VtY-10-0VT" id="T7S-M8-ETR"/>
@@ -131,7 +224,7 @@
         <!--信-->
         <scene sceneID="IVZ-dZ-rol">
             <objects>
-                <viewController title="信" id="xuG-16-vGy" customClass="MessageViewController" customModule="Mysterious" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xuG-16-vGy" customClass="MessageViewController" customModule="Mysterious" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2wQ-Pg-D7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +274,7 @@
                         <viewLayoutGuide key="safeArea" id="zBZ-9b-zwj"/>
                     </view>
                     <navigationItem key="navigationItem" title="信" id="0Hd-dy-2Oi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="b28-hu-VFc">
+                        <barButtonItem key="rightBarButtonItem" image="new_letter-Small" id="b28-hu-VFc">
                             <connections>
                                 <segue destination="G2x-GQ-VuR" kind="show" id="zQ8-tk-x8M"/>
                             </connections>
@@ -197,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rp-q4-MAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760.8" y="-199.50738916256159"/>
+            <point key="canvasLocation" x="1759" y="-691"/>
         </scene>
         <!--Detail Message View Controller-->
         <scene sceneID="JQB-py-0Zi">
@@ -232,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mf-UC-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="-921.42857142857144"/>
+            <point key="canvasLocation" x="2666" y="-1413"/>
         </scene>
         <!--Add Message View Controller-->
         <scene sceneID="PsI-s1-k3D">
@@ -268,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1B-hJ-1Y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="-200.24630541871923"/>
+            <point key="canvasLocation" x="2666" y="-692"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8lE-zv-2eP">
@@ -336,7 +429,7 @@
         <scene sceneID="nCG-HS-a6h">
             <objects>
                 <navigationController title="信" automaticallyAdjustsScrollViewInsets="NO" id="KDF-1r-McA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="信" id="Nf7-gL-SPy"/>
+                    <tabBarItem key="tabBarItem" title="信" image="envelope_outline-Small" id="Nf7-gL-SPy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gvN-3a-r6A">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -349,13 +442,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYj-fX-hFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818.39999999999998" y="-199.50738916256159"/>
+            <point key="canvasLocation" x="817" y="-691"/>
         </scene>
         <!--杂-->
         <scene sceneID="2ed-Gf-blb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68S-G7-LFq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="杂" id="PKA-WZ-SaB"/>
+                    <tabBarItem key="tabBarItem" title="杂" image="voucher_ticket-Small" id="PKA-WZ-SaB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8b9-jy-sPT">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -368,7 +461,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4I-0z-hkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="1182.2660098522167"/>
+            <point key="canvasLocation" x="817" y="1681"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-Small" width="29" height="29"/>
+        <image name="envelope_outline-Small" width="29" height="29"/>
+        <image name="new_letter-Small" width="29" height="29"/>
+        <image name="new_voucher-Small" width="29" height="29"/>
+        <image name="voucher_ticket-Small" width="29" height="29"/>
+    </resources>
 </document>

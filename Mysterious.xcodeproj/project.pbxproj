@@ -15,12 +15,13 @@
 		96D676B822D440700036CD85 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676B622D440700036CD85 /* MessageTableViewCell.swift */; };
 		96D676B922D440700036CD85 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D676B722D440700036CD85 /* MessageTableViewCell.xib */; };
 		96D676BB22D451870036CD85 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676BA22D451870036CD85 /* Tickets.swift */; };
+		96D676BF22D45B390036CD85 /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676BE22D45B390036CD85 /* AddTicketViewController.swift */; };
 		96D79574229FC97300F4FF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D79573229FC97300F4FF52 /* GoogleService-Info.plist */; };
 		96E1BED5229FCC4000EF975E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED4229FCC4000EF975E /* LoginViewController.swift */; };
 		96E1BED7229FEF6E00EF975E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED6229FEF6E00EF975E /* Message.swift */; };
 		96E1BED922A006B000EF975E /* AddMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED822A006B000EF975E /* AddMessageViewController.swift */; };
 		96F3DB2F229F9143005E8A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3DB2E229F9143005E8A19 /* AppDelegate.swift */; };
-		96F3DB31229F9143005E8A19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3DB30229F9143005E8A19 /* ViewController.swift */; };
+		96F3DB31229F9143005E8A19 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3DB30229F9143005E8A19 /* TicketViewController.swift */; };
 		96F3DB34229F9143005E8A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F3DB32229F9143005E8A19 /* Main.storyboard */; };
 		96F3DB36229F9144005E8A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F3DB35229F9144005E8A19 /* Assets.xcassets */; };
 		96F3DB39229F9144005E8A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F3DB37229F9144005E8A19 /* LaunchScreen.storyboard */; };
@@ -37,13 +38,14 @@
 		96D676B622D440700036CD85 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		96D676B722D440700036CD85 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		96D676BA22D451870036CD85 /* Tickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
+		96D676BE22D45B390036CD85 /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
 		96D79573229FC97300F4FF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96E1BED4229FCC4000EF975E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		96E1BED6229FEF6E00EF975E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		96E1BED822A006B000EF975E /* AddMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageViewController.swift; sourceTree = "<group>"; };
 		96F3DB2B229F9143005E8A19 /* Mysterious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mysterious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F3DB2E229F9143005E8A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96F3DB30229F9143005E8A19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96F3DB30229F9143005E8A19 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		96F3DB33229F9143005E8A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96F3DB35229F9144005E8A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96F3DB38229F9144005E8A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,11 +133,12 @@
 		96F3DB40229FC4D2005E8A19 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				96D676BE22D45B390036CD85 /* AddTicketViewController.swift */,
 				96D676B022D336550036CD85 /* TimeViewController.swift */,
 				96E1BED4229FCC4000EF975E /* LoginViewController.swift */,
 				96F3DB41229FC4FA005E8A19 /* MessageViewController.swift */,
 				96E1BED822A006B000EF975E /* AddMessageViewController.swift */,
-				96F3DB30229F9143005E8A19 /* ViewController.swift */,
+				96F3DB30229F9143005E8A19 /* TicketViewController.swift */,
 				96D676AC22CF7D990036CD85 /* DetailMessageViewController.swift */,
 			);
 			path = "View Controllers";
@@ -283,10 +286,11 @@
 				96D676B122D336550036CD85 /* TimeViewController.swift in Sources */,
 				96E1BED5229FCC4000EF975E /* LoginViewController.swift in Sources */,
 				96D676B822D440700036CD85 /* MessageTableViewCell.swift in Sources */,
-				96F3DB31229F9143005E8A19 /* ViewController.swift in Sources */,
+				96F3DB31229F9143005E8A19 /* TicketViewController.swift in Sources */,
 				96E1BED7229FEF6E00EF975E /* Message.swift in Sources */,
 				96D676AD22CF7D990036CD85 /* DetailMessageViewController.swift in Sources */,
 				96F3DB42229FC4FA005E8A19 /* MessageViewController.swift in Sources */,
+				96D676BF22D45B390036CD85 /* AddTicketViewController.swift in Sources */,
 				96D676BB22D451870036CD85 /* Tickets.swift in Sources */,
 				96D676B422D43D720036CD85 /* UtilityTableViewCell.swift in Sources */,
 				96F3DB2F229F9143005E8A19 /* AppDelegate.swift in Sources */,
@@ -435,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC62DC1756DCD4DDEC6B8D4F /* Pods-Mysterious.debug.xcconfig */;
 			buildSettings = {
+				ADDITIONAL_SDKS = iOS13;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M85N842CH3;
@@ -446,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KaifanWei.Mysterious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06CC211595ACE203C5AB03D7 /* Pods-Mysterious.release.xcconfig */;
 			buildSettings = {
+				ADDITIONAL_SDKS = iOS13;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M85N842CH3;
@@ -465,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KaifanWei.Mysterious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
