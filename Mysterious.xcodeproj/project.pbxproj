@@ -16,6 +16,7 @@
 		96D676B922D440700036CD85 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D676B722D440700036CD85 /* MessageTableViewCell.xib */; };
 		96D676BB22D451870036CD85 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676BA22D451870036CD85 /* Tickets.swift */; };
 		96D676BF22D45B390036CD85 /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D676BE22D45B390036CD85 /* AddTicketViewController.swift */; };
+		96D676C322D5FB460036CD85 /* MFJunYa_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96D676C222D5FB310036CD85 /* MFJunYa_Noncommercial-Regular.ttf */; };
 		96D79574229FC97300F4FF52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D79573229FC97300F4FF52 /* GoogleService-Info.plist */; };
 		96E1BED5229FCC4000EF975E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED4229FCC4000EF975E /* LoginViewController.swift */; };
 		96E1BED7229FEF6E00EF975E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1BED6229FEF6E00EF975E /* Message.swift */; };
@@ -39,6 +40,7 @@
 		96D676B722D440700036CD85 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		96D676BA22D451870036CD85 /* Tickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
 		96D676BE22D45B390036CD85 /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
+		96D676C222D5FB310036CD85 /* MFJunYa_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MFJunYa_Noncommercial-Regular.ttf"; path = "../../../Documents/Resource/Fonts/MFJunYa_Noncommercial-Regular.ttf/MFJunYa_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		96D79573229FC97300F4FF52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96E1BED4229FCC4000EF975E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		96E1BED6229FEF6E00EF975E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				96F3DB37229F9144005E8A19 /* LaunchScreen.storyboard */,
 				96F3DB3A229F9144005E8A19 /* Info.plist */,
 				96D79573229FC97300F4FF52 /* GoogleService-Info.plist */,
+				96D676C222D5FB310036CD85 /* MFJunYa_Noncommercial-Regular.ttf */,
 				96D676AF22D32A710036CD85 /* MyPlayground.playground */,
 			);
 			path = Mysterious;
@@ -133,12 +136,12 @@
 		96F3DB40229FC4D2005E8A19 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				96E1BED4229FCC4000EF975E /* LoginViewController.swift */,
+				96F3DB30229F9143005E8A19 /* TicketViewController.swift */,
 				96D676BE22D45B390036CD85 /* AddTicketViewController.swift */,
 				96D676B022D336550036CD85 /* TimeViewController.swift */,
-				96E1BED4229FCC4000EF975E /* LoginViewController.swift */,
 				96F3DB41229FC4FA005E8A19 /* MessageViewController.swift */,
 				96E1BED822A006B000EF975E /* AddMessageViewController.swift */,
-				96F3DB30229F9143005E8A19 /* TicketViewController.swift */,
 				96D676AC22CF7D990036CD85 /* DetailMessageViewController.swift */,
 			);
 			path = "View Controllers";
@@ -213,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D676C322D5FB460036CD85 /* MFJunYa_Noncommercial-Regular.ttf in Resources */,
 				96F3DB39229F9144005E8A19 /* LaunchScreen.storyboard in Resources */,
 				96D676B922D440700036CD85 /* MessageTableViewCell.xib in Resources */,
 				96D79574229FC97300F4FF52 /* GoogleService-Info.plist in Resources */,

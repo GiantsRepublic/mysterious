@@ -31,6 +31,7 @@ class MessageViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: "myCell")
         
         tabBarItem.image = tabBarItem.image?.withRenderingMode(.alwaysTemplate)
+        print(user)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,22 +40,40 @@ class MessageViewController: UIViewController {
     
     func FirebaseCall() {
 
-        msgTable.removeAll()
         let rootRef = Database.database().reference().child("Messages")
         rootRef.observe(.value) { (snapshot) in
+            
+            //remove all previous values
+            self.msgTable.removeAll()
+            
+            //var count = 0
+
             //print(snapshot.value!)
             if snapshot.hasChildren() {
                 let value = snapshot.value! as! [String: Any]
-                print(value)
+                //print(value)
                 for msg in value {
                     let title = msg.key
-                    let detail = msg.value as! [String: String]
-                    let body = detail["body"]
-                    let date = detail["date"]
-                    let message = Message(title: title, body: body!)
-                    message.timeStamp = date!
+                    let detail = msg.value as! [String: Any]
+                    let body = detail["body"] as! String
+                    let date = detail["date"] as! String
+                    let count = detail["count"] as! Int
+                    let sender = detail["sender"] as! String
+                    let read = detail["read"] as! String
+                    let message = Message(title: title, body: body, count: count, sender: sender)
+                    message.timeStamp = date
+                    message.read = read
                     self.msgTable.append(message)
                 }
+                
+                //sort msgTable by count
+                var tempTable = self.msgTable
+                for message in self.msgTable {
+                    tempTable[message.count] = message
+                }
+                
+                self.msgTable = tempTable.reversed()
+                
                 self.loaded = true
                 self.tableView.isHidden = false
                 self.loadingView.isHidden = true
@@ -76,9 +95,18 @@ extension MessageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MessageTableViewCell
         
+        if msgTable[indexPath.row].read == "false" {
+            cell.newLabel.isHidden = false
+        } else {
+            cell.newLabel.isHidden = true
+        }
+        
+        
+        
+        //set cell texts
         cell.titleLabel.text = msgTable[indexPath.row].title
         cell.dateLabel.text = msgTable[indexPath.row].timeStamp
-        cell.nameLabel.isHidden = true
+        cell.nameLabel.text = msgTable[indexPath.row].sender
         
         return cell
     }
@@ -89,6 +117,7 @@ extension MessageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
+        
         self.performSegue(withIdentifier: "messageDetail", sender: self)
     }
     

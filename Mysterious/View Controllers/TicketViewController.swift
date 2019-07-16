@@ -73,6 +73,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! UtilityTableViewCell
         cell.ticketNameLabel.text = self.ticketTable[indexPath.row].title
         cell.ticketLeftLabel.text = "剩余 \(self.ticketTable[indexPath.row].count) 张"
+        cell.issuerLabel.text = self.ticketTable[indexPath.row].issuer
         return cell
     }
     
@@ -83,15 +84,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //validate ticket count
         let selectedTicket = self.ticketTable[indexPath.row]
-        if selectedTicket.count > 0 {
+        if selectedTicket.count > 0 && selectedTicket.issuer != user {
             //alert actions
             let confirmAlert = UIAlertController(title: "你确定吗!", message: "你确定要使用\(self.ticketTable[indexPath.row].title)吗", preferredStyle: .alert)
             confirmAlert.addAction(UIAlertAction(title: "确定！", style: .default, handler: {action in self.confirmHandler(ticket: self.ticketTable[indexPath.row])}))
             confirmAlert.addAction(UIAlertAction(title: "我再想想", style: .cancel, handler: nil))
             self.present(confirmAlert, animated: true)
+        } else if selectedTicket.issuer == user{
+            let alert = UIAlertController(title: "警告⚠️", message: "你不可以使用自己颁发的\(self.ticketTable[indexPath.row].title)哦", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "好吧！", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
-        
-        
     }
     
     func confirmHandler (ticket: Ticket) {

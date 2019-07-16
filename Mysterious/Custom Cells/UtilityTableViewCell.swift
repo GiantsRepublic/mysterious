@@ -12,6 +12,7 @@ class UtilityTableViewCell: UITableViewCell {
 
     @IBOutlet var ticketNameLabel: UILabel!
     @IBOutlet var ticketLeftLabel: UILabel!
+    @IBOutlet var issuerLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

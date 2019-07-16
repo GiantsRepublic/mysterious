@@ -31,6 +31,7 @@ class AddTicketViewController: UIViewController {
     
     @objc func addTapped() {
         
+        //print("current count: \(currentCount())")
         //validate text entry
         if titleField.text?.isEmpty != true {
             
@@ -39,7 +40,7 @@ class AddTicketViewController: UIViewController {
             let count = sliderInt
             
             let rootRef = Database.database().reference().child("Tickets").child(ticketName)
-            rootRef.updateChildValues(["count": count, "issuer": "blank"])
+            rootRef.updateChildValues(["count": count, "issuer": user])
             self.navigationController?.popViewController(animated: true)
             
         } else {
@@ -48,6 +49,20 @@ class AddTicketViewController: UIViewController {
             self.present(emptyAlert, animated: true)
         }
     }
+    
+//    func currentCount() -> Int {
+//        var count: Int = 0
+//        let rootRef = Database.database().reference().child("Tickets")
+//        rootRef.observe(.value) { (snapshot) in
+//            //print(snapshot.value!)
+//            if snapshot.hasChildren() {
+//                count = Int(snapshot.childrenCount)
+//            }
+//
+//        }
+//
+//        return count
+//    }
     
 
 }

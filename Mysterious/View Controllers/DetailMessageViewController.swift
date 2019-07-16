@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailMessageViewController: UIViewController {
     
@@ -21,6 +22,9 @@ class DetailMessageViewController: UIViewController {
 
         titleLabel.text = msg.title
         bodyText.text = msg.body
+        
+        let rootRef = Database.database().reference().child("Messages")
+        rootRef.child("\(msg.title)").updateChildValues(["read": "true"])
     }
     
 

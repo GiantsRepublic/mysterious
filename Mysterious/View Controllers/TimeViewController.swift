@@ -12,6 +12,7 @@ class TimeViewController: UIViewController {
 
     var timer = Timer()
     
+    @IBOutlet var background: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
@@ -25,7 +26,9 @@ class TimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        background.backgroundColor = UIColor(red: 254/255.0, green: 223/255.0, blue: 225/255.0, alpha: 1)
+        
         titleLabel.isHidden = true
         yearLabel.isHidden = true
         monthLabel.isHidden = true

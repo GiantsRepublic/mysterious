@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MFJunYa_Noncommercial-Regular.ttf">
+            <string>MFJunYa_Noncommercial-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,29 +23,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-sD-xNi">
-                        <rect key="frame" x="16" y="11" width="109" height="26.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu1-Jm-FRe">
+                        <rect key="frame" x="276" y="62" width="59" height="17"/>
+                        <fontDescription key="fontDescription" name="MFJunYa_Noncommercial-Regular" family="MF JunYa (Noncommercial)" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu1-Jm-FRe">
-                        <rect key="frame" x="263" y="58" width="72" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="issuer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfn-Nb-PxV">
+                        <rect key="frame" x="16" y="62" width="35" height="17"/>
+                        <fontDescription key="fontDescription" name="MFJunYa_Noncommercial-Regular" family="MF JunYa (Noncommercial)" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticketName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-sD-xNi">
+                        <rect key="frame" x="16" y="11" width="101.5" height="25"/>
+                        <fontDescription key="fontDescription" name="MFJunYa_Noncommercial-Regular" family="MF JunYa (Noncommercial)" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="fu1-Jm-FRe" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4sK-8y-Bsh"/>
-                    <constraint firstItem="Pb0-sD-xNi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="IYr-ci-b8m"/>
+                    <constraint firstItem="gfn-Nb-PxV" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="6Ur-fk-rAG"/>
                     <constraint firstItem="fu1-Jm-FRe" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="KdT-1I-MuJ"/>
                     <constraint firstItem="fu1-Jm-FRe" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="guL-eN-oQd"/>
+                    <constraint firstItem="Pb0-sD-xNi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hrA-Go-a9q"/>
                     <constraint firstItem="Pb0-sD-xNi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="uxN-BQ-jmF"/>
+                    <constraint firstItem="gfn-Nb-PxV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yZg-j7-Hb4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="issuerLabel" destination="gfn-Nb-PxV" id="lrM-ip-g4E"/>
                 <outlet property="ticketLeftLabel" destination="fu1-Jm-FRe" id="4jK-S5-WW3"/>
                 <outlet property="ticketNameLabel" destination="Pb0-sD-xNi" id="Htw-1q-JhJ"/>
             </connections>
